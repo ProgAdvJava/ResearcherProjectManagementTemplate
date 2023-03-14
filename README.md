@@ -12,11 +12,16 @@ Zorg dat alle sql-statements in de log-file (console) worden getoond.
 
 #### 3. Researchers
 
-Maak de ResearcherRepository aan. Vervolledig nu de methoden in de ResearcherService zoals gevraagd.
+Vervolledig de entity-klasse Researcher. You need a one-to-one relationship between Researcher and ContactInformation.
+Maak de ResearcherRepository aan. Vervolledig de methoden in de ResearcherService zoals gevraagd.
 De SetupController bevat een endpoint om Researchers aan te maken in de databank.
 Zorg ervoor dat je de contactinformatie van een researcher kunt aanpassen met het endpoint:
 ```
 http://localhost:<port>/<context-path>/researchers/<researcher-id>/<contact-type>
+
+{
+    "value" : "value-comes-here"
+}
 ```
 
 De nieuwe waarde voor het contact-type (bijv. phone), wordt meegegeven in json-format in de request body.
@@ -25,7 +30,8 @@ Zorg er verder voor de een researcher verwijderd kan worden. Worden ook de bijho
 
 #### 4. Researchers en projecten
 
-Je kan een researcher aan een project toekennen en van een project halen.
+
+Vervolledig de entity-klasse Project. Je kan een researcher aan een project toekennen en van een project halen.
 Hiervoor worden de volgende twee endpoints ontwikkeld.
 ```
 http://localhost:<port>/<context-path>/researchers/<researcher-id>/join
@@ -49,11 +55,12 @@ Zorg dat je alle business-regels test met behulp van unit testen.
 
 #### 5. Status van een project aanpassen
 
-Ontwikkel een endpoint om de status van een project aan te passen.
+Ontwikkel een endpoint om de status van een project aan te passen. Je mag zelf beslissen hoe dit endpoint eruit ziet.
+
 
 #### 6. Researcher opzoeken aan de hand van een id
 
-Voorzie een endpoint om alle gegevens van een researcher (incl. zijn projecten) op te zoeken adhv de id van de researcher.
+Voorzie een endpoint om alle gegevens van een researcher (incl. zijn projecten - startdatum, naam en status) op te zoeken adhv de id van de researcher.
 
 #### 7. Projecten opzoeken
 
@@ -62,6 +69,6 @@ Voorzie een endpoint om alle gegevens van een researcher (incl. zijn projecten) 
 
 Zorg voor unit testen voor alle queries die je toevoegt in de repositories.
 
-# Optional: SonarQube report
+#### Optional: SonarQube report
 
 Configureer SonarQube en bekijk het rapport mbt de kwaliteit van je oplossing.
