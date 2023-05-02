@@ -17,7 +17,7 @@ Maak de ResearcherRepository aan. Vervolledig de methoden in de ResearcherServic
 De SetupController bevat een endpoint om Researchers aan te maken in de databank.
 Zorg ervoor dat je de contactinformatie van een researcher kunt aanpassen met het endpoint:
 ```
-http://localhost:<port>/<context-path>/researchers/<researcher-id>/<contact-type>
+PUT http://localhost:<port>/<context-path>/researchers/<researcher-id>/<contact-type>
 
 {
     "value" : "value-comes-here"
@@ -26,7 +26,7 @@ http://localhost:<port>/<context-path>/researchers/<researcher-id>/<contact-type
 
 De nieuwe waarde voor het contact-type (bijv. phone), wordt meegegeven in json-format in de request body.
 
-Zorg er verder voor de een researcher verwijderd kan worden. Worden ook de bijhorende contactgegevens van de researcher verwijderd?
+Zorg er verder voor dat een researcher verwijderd kan worden. Worden ook de bijhorende contactgegevens van de researcher verwijderd als de researcher wordt verwijderd? Indien dit niet het geval is, pas je dit aan!
 
 #### 4. Researchers en projecten
 
@@ -34,8 +34,8 @@ Zorg er verder voor de een researcher verwijderd kan worden. Worden ook de bijho
 Vervolledig de entity-klasse Project. Je kan een researcher aan een project toekennen en van een project halen.
 Hiervoor worden de volgende twee endpoints ontwikkeld.
 ```
-http://localhost:<port>/<context-path>/researchers/<researcher-id>/join
-http://localhost:<port>/<context-path>/researchers/<researcher-id>/leave
+POST http://localhost:<port>/<context-path>/researchers/<researcher-id>/join
+POST http://localhost:<port>/<context-path>/researchers/<researcher-id>/leave
 ```
 Het project wordt meegegeven in json-formaat in de request-body.
 ```
